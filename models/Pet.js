@@ -1,5 +1,6 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
+const User = require('./User');
 
 const Pet = sequelize.define('Pet', {
     id : {
@@ -35,6 +36,16 @@ const Pet = sequelize.define('Pet', {
         type : DataTypes.BOOLEAN,
         allowNull : false,
     }
+    ,
+    userId: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: 'Users',
+            key: 'id'
+        }
+    }
+}, {
+    tableName: 'Pets'
 })
 
 module.exports = Pet;

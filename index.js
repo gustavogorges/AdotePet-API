@@ -2,10 +2,12 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const sequelize = require('./config/database');
 const userRoutes = require('./routes/userRoutes');
+const petRoutes = require('./routes/petRoutes')
 
 const app = express();
 app.use(bodyParser.json());
 app.use('/api',userRoutes);
+app.use('/api',petRoutes);
 
 sequelize.sync().then(() => {
     app.listen(3000, () => {

@@ -1,5 +1,6 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
+const Pet = require('./Pet');
 
 const User = sequelize.define('User', {
     id : {
@@ -27,6 +28,9 @@ const User = sequelize.define('User', {
         type : DataTypes.STRING,
         allowNull : false
     }
+}
+, {
+    tableName: 'Users'
 });
 
 module.exports = User;
