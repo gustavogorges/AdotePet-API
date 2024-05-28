@@ -31,4 +31,16 @@ const Event = sequelize.define('Event', {
         type : DataTypes.STRING,
         allowNull : false
     }
+    ,
+    userId: {
+        type : DataTypes.INTEGER,
+        references: {
+            model : 'Users',
+            key: 'id'
+        }
+    }
+}, {
+    tableName: 'Events'
 })
+
+module.exports = Event;
