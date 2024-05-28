@@ -4,8 +4,8 @@ exports.createuser = async (req,res) => {
     try {
         const {name,species,race,castrated,sex,vacinated,deficient} = req.body;
         const pet = await Pet.create({name,species,race,castrated,sex,vacinated,deficient});
-        res.status(201).json(user);
+        res.status(201).json(pet);
     } catch(error) {
         res.status(400).json({message : error.message});
     }
-}
+}   
