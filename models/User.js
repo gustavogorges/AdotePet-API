@@ -21,7 +21,7 @@ const User = sequelize.define('User', {
         allowNull : false
     },
     bornDate : {
-        type : DataTypes.DATE,
+        type : DataTypes.STRING,
         allowNull : false
     },
     password : {
