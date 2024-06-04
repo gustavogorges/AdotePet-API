@@ -35,8 +35,19 @@ const Pet = sequelize.define('Pet', {
     deficient : {
         type : DataTypes.BOOLEAN,
         allowNull : false,
-    }
-    ,
+    },
+    birthDate : {
+        type : DataTypes.STRING,
+        allowNull : false,
+    },
+    location :{
+        type : DataTypes.STRING,
+        allowNull : false,
+    },
+    description :{
+        type : DataTypes.STRING,
+        allowNull : false,
+    },
     userId: {
         type: DataTypes.INTEGER,
         references: {
