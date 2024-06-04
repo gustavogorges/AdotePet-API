@@ -37,3 +37,17 @@ exports.getUserByEmail = async (req, res) => {
         return res.status(500).json({ message: 'Failed to get the specific user', error: error.message})
     }
 }
+
+exports.getUserById = async (req,res) => {
+    try {
+        const id = req.params.id;
+        const user = await User.findByPk(id);
+        if(user){
+            res.status(200).json(user);
+        } else {
+            res.status(404).json({ error : 'User not found'})
+        }
+    } catch(error) {
+        return res.status(500).json({message : 'Failed to get the specific user'})
+    }
+}
